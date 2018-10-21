@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Content CSS */
+
+.center-content {
+  display: inline-block;
+  max-width: 580px;
+  margin-top: 23%;
+}
+
+.left-content {
+  display: inline-block;
+  position: relative;
+  max-width: 580px;
+  top: 40%;
+  right: 30%;
+}
+
+.content-wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  min-height: 680px;
+}
+
+.main-block {
+  background-image: url('../img/main_girl_grass_1920x1080.jpg');
+}
+
+.content-sub-wrapper {
+  text-align: center;
+  min-height: 560px;
+}
+
+.about-block {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/anime-wallpaper-1920x1080.jpg');
+}
+
+/* Logo CSS */
+
+.logo-wrapper {
+  color: #b7a574;
+  max-width: 100%;
+  margin: auto;
+}
+
+.logo-wrapper p {
+  font-size: 36px;
+  text-shadow: 0 0 8px rgba(0,0,0,6);
+}
+
+.sub-shadow {
+  text-shadow: 0 0 12px rgba(0,0,0,6);
+}
+
+/* Sign Button CSS */
+
+.ctrl-standard.fx-bubbleDown {
+  cursor: pointer;
+  border: 1px solid #CCFF33;
+  border-top: 2px solid #CCFF33;
+  border-bottom: 1px solid #574f49;
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+.typ-subhed {
+  font-family: 'Oswald', sans-serif;
+  line-height: 32px;
+  text-align: center;
+}
+
+.ctrl-standard.fx-bubbleDown::after {
+  bottom: auto;
+  border-radius: 0 0 75% 75%/0 0 50% 50%;
+  background: #66FFCC;
+}
+.ctrl-standard.fx-bubbleDown.is-reversed::after {
+  height: 300%;
+}
+.ctrl-standard.fx-bubbleDown.is-reversed:hover {
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+.ctrl-standard.fx-bubbleDown.is-reversed:hover::after {
+  height: 0;
+}
+
+[class*="ctrl-"] {
+  padding: 5ox 10px;
+  border-radius: 2px;
+  border: 1px solid #231f20;
+}
+[class*="ctrl-"][class*="fx-"]:hover,
+[class*="ctrl-"][class*="fx-"].active {
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+[class*="ctrl-"][class*="fx-"].is-reversed {
+  background-color: rgba( 255, 255, 255, 0.5 );
+}
+[class*="fx-"],
+[class*="fx-"]:hover {
+  transition: color 0.5s  ease-in-out;
+}
+[class*="fx-"]:not(.fx-dyna) {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+[class*="fx-"]:not(.fx-dyna)::after,
+[class*="fx-"]:not(.fx-dyna)::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+[class*="fx-bubble"]::after {
+  transition: height 0.5s ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+[class*="fx-bubble"]:hover::after,
+[class*="fx-bubble"].active::after {
+  transition: height 0.5s ease-in-out;
+  height: 300%;
+}
+[class*="fx-bubble"]:disabled:hover::after {
+  height: 0;
+}
+.fx-sliderIn::after {
+  transition: width 0.5s ease-in-out;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+}
+.fx-sliderIn:hover::after,
+.fx-sliderIn.active::after {
+  transition: width 0.5s ease-in-out;
+  width: 100%;
+}
+:checked + .fx-sliderIn::after,
+.fx-sliderIn.active::after {
+  width: 300%;
+}
+
+/* Image Zoom */
+
+.zoom {
+  padding: 50px;
+  transition: transform 2.2s;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1); 
+}
+
+.section-block, .border-line {
+  margin-top: 0;
+  overflow: hidden;
+  border-top: 2px solid #b7a574;
+  height: 100%;
+  width: 100%;
+}
+
+.border-line:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  background-color: #b7a574;
+  background-size: contain;
+  background-position: 1px 0;
+}

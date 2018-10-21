@@ -2,7 +2,7 @@ import * as component from './component'
 
 export default [
   {
-    path: '/main',
+    path: '/',
     component: component.Main,
     name: 'main'
   }
