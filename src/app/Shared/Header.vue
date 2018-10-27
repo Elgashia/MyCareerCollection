@@ -1,7 +1,7 @@
 <template>
-  <div id="our-girlfriend-header">
+  <!-- <div id="our-girlfriend-header"> -->
     <!-- Top menu -->
-    <b-navbar toggleable="lg" class="row" type="dark">
+    <b-navbar id="our-girlfriend-header" toggleable="lg" class="row" type="dark" sticky>
       <div class="container col-md-10">
         <b-navbar-brand to="/">Ours Girls</b-navbar-brand>
 
@@ -16,7 +16,7 @@
         </b-navbar-nav>
       </div>
     </b-navbar>
-  </div>
+  <!-- </div> -->
 </template>
 
 <script>
@@ -28,8 +28,7 @@ export default {
 <style scoped>
 #our-girlfriend-header {
   background-color: #66CC00;
-  position: fixed;
   z-index: 3;
-  width: 100%;
+  top: 0;
 }
 </style>

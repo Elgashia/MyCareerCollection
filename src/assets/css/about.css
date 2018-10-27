@@ -1,0 +1,22 @@
+#about {
+  font-family: 'Roboto', sans-serif;
+}
+
+.about-content {
+  position: relative;
+}
+
+.about-wrapper-background {
+  max-width: 25%;
+  height: auto;
+}
+
+.about-content-frame {
+  border: 3px solid #CCFF33;
+  border-top: 3.5px solid #CCFF33;
+  border-bottom: 2px solid #CCFF33;
+  text-shadow: 0 0 12px rgba(0, 0, 0, 1);
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+}
