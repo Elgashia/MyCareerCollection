@@ -6,7 +6,7 @@
     <div class="about-content-frame">
       <p>
         I think everyone who visited this site would have had a strange idea.
-        but, this site is describe the site developed by erwinousy and here is have a site link.
+        but, this site is describe the site developed by erwinousy and this site is have a site link.
         haha.
         Have a nice day!
       </p>

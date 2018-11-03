@@ -6,11 +6,11 @@
         <b-navbar-brand to="/">Ours Girls</b-navbar-brand>
 
         <b-navbar-nav class="ml-auto" right>
-          <b-nav-item to="/About">About</b-nav-item>
-          <b-nav-item to="/GUIDE" disabled>GUIDE</b-nav-item>
-          <b-nav-item to="/NEWS" disabled>NEWS</b-nav-item>
-          <b-nav-item to="/EXPANSIONS" disabled>EXPANSIONS</b-nav-item>
-          <b-nav-item to="/MEDIA" disabled>MEDIA</b-nav-item>
+          <b-nav-item to="/About">ABOUT</b-nav-item>
+          <b-nav-item to="/Guide" disabled>GUIDE</b-nav-item>
+          <b-nav-item to="/News">NEWS</b-nav-item>
+          <b-nav-item to="/Expansions" disabled>EXPANSIONS</b-nav-item>
+          <b-nav-item to="/Media" disabled>MEDIA</b-nav-item>
           <b-nav-item to="/signIn">Sign-In</b-nav-item>
           <b-nav-item to="/signUp">Sign-Up</b-nav-item>
         </b-navbar-nav>

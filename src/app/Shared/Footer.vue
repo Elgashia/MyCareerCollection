@@ -48,6 +48,7 @@ export default {
 
 <style scoped>
 #our-girlfriend-footer {
-  position: relative;
+  position: absolute;
+  width: 100%;
 }
 </style>

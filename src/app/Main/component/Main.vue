@@ -45,6 +45,7 @@
       <div class="content-sub-wrapper border-line about-block zoom">
         <b-card title="NEWS" class="text-center left-content" tag="article">
           <p class="card-text">This is a news page of new girls.</p>
+          <b-link to="/News" class="card-link">go to news of ours girls</b-link>
         </b-card>
       </div>
     </div>

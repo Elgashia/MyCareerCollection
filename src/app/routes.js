@@ -1,4 +1,4 @@
-import { routes as about } from './About'
+import { routes as list } from './List'
 import { routes as main } from './Main'
 
-export default [ ...main, ...about ]
+export default [ ...main, ...list ]

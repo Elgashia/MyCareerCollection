@@ -8,8 +8,8 @@
 
 <script>
 // default components.
-import Header from './Shared/Header'
-import Footer from './Shared/Footer'
+import Header from '@/app/Shared/Header'
+import Footer from '@/app/Shared/Footer'
 
 import '@/assets/css/app.css'
 
