@@ -11,8 +11,7 @@
           <b-nav-item to="/News">NEWS</b-nav-item>
           <b-nav-item to="/Expansions" disabled>EXPANSIONS</b-nav-item>
           <b-nav-item to="/Media" disabled>MEDIA</b-nav-item>
-          <b-nav-item to="/signIn">Sign-In</b-nav-item>
-          <b-nav-item to="/signUp">Sign-Up</b-nav-item>
+          <b-nav-item to="/registNews">registNews</b-nav-item>
         </b-navbar-nav>
       </div>
     </b-navbar>

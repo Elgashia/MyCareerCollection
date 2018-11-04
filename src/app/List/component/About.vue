@@ -1,6 +1,6 @@
 <template>
   <div id="about" class="content-wrapper">
-    <img class="img-fluid mx-auto d-block about-wrapper-background" src="../../../assets/img/azur-lane-miwabe-sakura-long-hair-single-tall-image.jpg" />
+    <img class="img-fluid mx-auto d-block about-wrapper-background" src="../../../assets/img/about_girl.jpg" />
     <h2>Nyan Hello~!</h2>
     <p>This page is explain about ours girls.</p>
     <div class="about-content-frame">
