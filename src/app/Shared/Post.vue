@@ -6,15 +6,15 @@
       <p>
         {{ content }}
       </p>
-      <LinkContent v-if="islink" :infoLink="infoLink" />
+      <p v-if="islink">
+        {{ infoLink.explain }} <b-link class="card-link" :href="infoLink.link" variant="primary">{{ infoLink.linkContent }}</b-link>
+      </p>
     </b-media>
     <b-button class="mb-12" variant="info" @click="routeBack">뒤로가기</b-button>
   </b-card>
 </template>
 
 <script>
-import { LinkContent } from '@/app/Shared'
-
 export default {
   name: 'post',
   data () {
@@ -26,7 +26,6 @@ export default {
       infoLink: ''
     }
   },
-  components: { LinkContent },
   methods: {
     routeBack () {
       this.$router.go(-1)
