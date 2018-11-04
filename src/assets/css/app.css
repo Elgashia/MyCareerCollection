@@ -60,6 +60,12 @@
   background-image: url('../img/intro_guide.png');
 }
 
+.news-block {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../img/intro_news.png');
+}
+
 /* Logo CSS */
 
 .logo-wrapper {

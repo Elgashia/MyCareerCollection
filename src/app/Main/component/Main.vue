@@ -35,15 +35,15 @@
       </div>
     </div>
     <div class="section-block">
-      <div class="content-sub-wrapper border-line about-block zoom">
+      <div class="content-sub-wrapper border-line guide-block zoom">
         <b-card title="GUIDE" class="text-center left-content" tag="article">
           <p class="card-text">This is a guide page on how to care for ours girls.</p>
         </b-card>
       </div>
     </div>
     <div class="section-block">
-      <div class="content-sub-wrapper border-line guide-block zoom">
-        <b-card title="NEWS" class="text-center left-content" tag="article">
+      <div class="content-sub-wrapper border-line news-block zoom">
+        <b-card title="NEWS" class="text-center left-content" tag="article" style="margin-top:17%; background-color:rgba( 255, 255, 255, 0.5 );">
           <p class="card-text">This is a news page of new girls.</p>
           <b-link to="/News" class="card-link">go to news of ours girls</b-link>
         </b-card>
