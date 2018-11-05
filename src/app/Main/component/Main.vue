@@ -7,19 +7,10 @@
           <p>A Strategy Card Game</p>
         </div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <button class="btn btn-lg ctrl-standard is-reversed typ-subhed fx-bubbleDown">
-              <router-link to="/">
-                <span>Sign-In</span>
-              </router-link>
-            </button>
-          </div>
-          <div class="col-sm-6">
-            <button class="btn btn-lg ctrl-standard is-reversed typ-subhed fx-bubbleDown">
-              <router-link to="/">
-                <span>
-                  Sign_Up
-                </span>
+              <router-link to="/News">
+                <span>최근소식 보러 가기</span>
               </router-link>
             </button>
           </div>

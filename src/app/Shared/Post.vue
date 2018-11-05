@@ -1,10 +1,10 @@
 <template>
   <b-card style="margin:22px auto;width:95%;">
     <b-media>
-      <img slot="aside" :src="img_src" alt="img" class="m-1" />
-      <h5 class="mt-0">{{ title }}</h5>
+      <img slot="aside" :src="require('@/assets' + data.img_src)" alt="img" class="m-1" />
+      <h5 class="mt-0">{{ data.title }}</h5>
       <p>
-        {{ content }}
+        {{ data.content }}
       </p>
       <p v-if="islink">
         {{ infoLink.explain }} <b-link class="card-link" :href="infoLink.link" variant="primary">{{ infoLink.linkContent }}</b-link>
@@ -15,15 +15,15 @@
 </template>
 
 <script>
+import { getNews } from '@/app/api/newsApi'
+
 export default {
   name: 'post',
   data () {
     return {
-      title: '',
-      content: '',
-      img_src: '',
-      islink: false,
-      infoLink: ''
+      data: Object,
+      infoLink: Object,
+      islink: false
     }
   },
   methods: {
@@ -32,12 +32,11 @@ export default {
     }
   },
   created () {
-    this.title = this.$route.params.data.title
-    this.content = this.$route.params.data.content
-    this.img_src = require('../../assets' + this.$route.params.data.img_src)
-    if (this.$route.params.data.link) {
+    this.data = getNews(this.$route.params.id)
+
+    if (this.data.link) {
       this.islink = !this.islink
-      this.infoLink = this.$route.params.data.link
+      this.infoLink = this.data.link
     }
   }
 }
