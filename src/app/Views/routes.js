@@ -16,5 +16,10 @@ export default [
     path: '/News/:id',
     component: Post,
     name: 'post'
+  },
+  {
+    path: '/registNews',
+    component: component.RegistPost,
+    name: 'registpost'
   }
 ]

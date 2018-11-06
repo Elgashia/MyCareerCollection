@@ -1,5 +1,5 @@
 <template>
-  <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+  <b-form @submit="onSubmit" @reset="onReset">
     <b-form-group id="exampleInputGroup1"
                   label="Email address:"
                   label-for="exampleInput1"
@@ -43,7 +43,12 @@
 
 <script>
 export default {
-
+  name: 'registpost',
+  data () {
+    return {
+      form: Object
+    }
+  }
 }
 </script>
 
