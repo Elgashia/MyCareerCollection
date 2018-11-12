@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { getNews } from '@/app/api/newsApi'
+import { getNews } from '@/app/api/news'
 
 export default {
   name: 'news',
@@ -32,7 +32,7 @@ export default {
   created () {
     this.newsList = getNews()
     for (let i = 0; i < this.newsList.length; i++) {
-      this.$localStorage.set('Id-' + i, JSON.stringify(this.newsList[i]))
+      this.$localStorage.set('news-' + (i + 1), JSON.stringify(this.newsList[i]))
     }
   }
 }

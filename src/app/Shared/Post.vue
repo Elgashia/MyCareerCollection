@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import { getNews } from '@/app/api/newsApi'
+import { getNews } from '@/app/api/news'
+
 import Comment from './Comment'
 
 export default {
@@ -39,7 +40,8 @@ export default {
     }
   },
   created () {
-    this.data = getNews(this.$route.params.id)
+    const id = this.$route.params.id
+    this.data = getNews(id)
 
     if (this.data.link) {
       this.islink = !this.islink

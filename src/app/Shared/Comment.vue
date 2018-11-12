@@ -1,25 +1,53 @@
 <template>
   <div role="group">
-    <b-row class="my-1">
-      <b-col sm="1"><label for="input-none">Name:</label></b-col>
-      <b-col sm="2">
-        <b-form-input id="input-none" :state="null" type="text" placeholder="username"></b-form-input>
-      </b-col>
-    </b-row>
-    <b-form-input id="inputLive"
-                  v-model.trim="name"
-                  type="text"
-                  placeholder="Enter Comment"></b-form-input>
-    <div v-for="(content, idx) in commentli" :key="idx">test: {{ content }}</div>
+    <b-card>
+      <b-form-group horizontal
+                    :label-cols="2"
+                    label="yourName:"
+                    label-class="text-left"
+                    label-for="userName">
+        <b-form-input class="ml-0" id="userName" v-model.trim="comment.name" :state="null" type="text" placeholder="username"></b-form-input>
+      </b-form-group>
+      <b-input-group>
+        <b-form-input id="inputLive"
+                      v-model="comment.comment"
+                      type="text"
+                      placeholder="Enter Comment"></b-form-input>
+        <b-input-group-append>
+          <b-btn class="outline-light" @click="addComment(comment)">댓글 달기</b-btn>
+        </b-input-group-append>
+      </b-input-group>
+    </b-card>
+
+    <b-card class="text-left mt-2 mb-2" :header="data.username ? data.username : ''" border-variant="info" v-for="(data, idx) in commentInfo" :key="idx">
+      <p class="card-text">
+        {{ data.comment }}
+      </p>
+    </b-card>
   </div>
 </template>
 
 <script>
+import { getComment, addComment } from '@/app/api/comment'
+
 export default {
   data () {
     return {
-      name: '',
-      commentli: [1, 2, 3, 4, 5]
+      comment: {
+        postId: this.$route.params.id,
+        name: '',
+        comment: ''
+      },
+      commentInfo: []
+    }
+  },
+  methods: {
+    addComment
+  },
+  created () {
+    this.commentInfo = getComment(this.$route.params.id)
+    for (let i = 0; i < this.commentInfo.length; i++) {
+      this.$localStorage.set('cmt-' + (i + 1), JSON.stringify(this.commentInfo[i]))
     }
   }
 }

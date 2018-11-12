@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 const news = [
   {
     id: 1,
@@ -28,15 +30,9 @@ const news = [
 ]
 
 export const getNews = (id) => {
-  var result = Object
-
+  // 전달받은 id에 해당되는 데이터가 없는 경우. 경고창 띄우기.
   if (id) {
-    news.forEach((data) => {
-      if (data.id === parseInt(id)) {
-        result = data
-      }
-    })
-    return result
+    return JSON.parse(Vue.localStorage.get('news-' + id))
   } else {
     return news
   }
