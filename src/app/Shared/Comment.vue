@@ -6,7 +6,7 @@
                     label="yourName:"
                     label-class="text-left"
                     label-for="userName">
-        <b-form-input class="ml-0" id="userName" v-model.trim="comment.name" :state="null" type="text" placeholder="username"></b-form-input>
+        <b-form-input class="ml-0" id="userName" v-model.trim="comment.username" :state="null" type="text" placeholder="username"></b-form-input>
       </b-form-group>
       <b-input-group>
         <b-form-input id="inputLive"
@@ -14,7 +14,7 @@
                       type="text"
                       placeholder="Enter Comment"></b-form-input>
         <b-input-group-append>
-          <b-btn class="outline-light" @click="addComment(comment)">댓글 달기</b-btn>
+          <b-btn class="outline-light" @click="addcomment(comment)">댓글 달기</b-btn>
         </b-input-group-append>
       </b-input-group>
     </b-card>
@@ -42,13 +42,15 @@ export default {
     }
   },
   methods: {
-    addComment
+    async addcomment (comment) {
+      const res = await addComment(comment)
+      this.commentInfo = [ ...this.commentInfo, res ]
+    }
   },
   created () {
-    this.commentInfo = getComment(this.$route.params.id)
-    for (let i = 0; i < this.commentInfo.length; i++) {
-      this.$localStorage.set('cmt-' + (i + 1), JSON.stringify(this.commentInfo[i]))
-    }
+    getComment(this.$route.params.id).then((res) => {
+      this.commentInfo = res
+    })
   }
 }
 </script>

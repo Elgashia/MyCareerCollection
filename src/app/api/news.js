@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import localforage from 'localforage'
 
 const news = [
   {
@@ -29,10 +29,20 @@ const news = [
   }
 ]
 
-export const getNews = (id) => {
+export const getNews = async (id) => {
+  let result = {}
+
+  for (let i = 0; i < news.length; i++) {
+    await localforage.setItem('news-' + (i + 1), JSON.stringify(news[i]))
+  }
   // 전달받은 id에 해당되는 데이터가 없는 경우. 경고창 띄우기.
   if (id) {
-    return JSON.parse(Vue.localStorage.get('news-' + id))
+    result = await localforage.getItem('news-' + id).then((res) => {
+      return JSON.parse(res)
+    }).catch((err) => {
+      console.log('News get error:', err)
+    })
+    return result
   } else {
     return news
   }

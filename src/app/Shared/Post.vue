@@ -2,7 +2,7 @@
   <b-container style="max-width:85%;">
     <b-card style="margin:22px auto;">
       <b-media>
-        <b-img rounded slot="aside" width="75" height="75" :src="require('@/assets' + data.img_src)" class="m-1" />
+        <b-img rounded slot="aside" width="75" height="75" :src="img_src" class="m-1" />
         <h5 class="mt-0">{{ data.title }}</h5>
         <p>
           {{ data.content }}
@@ -28,9 +28,10 @@ export default {
   name: 'post',
   data () {
     return {
-      data: Object,
-      infoLink: Object,
-      islink: false
+      data: {},
+      infoLink: {},
+      islink: false,
+      img_src: ''
     }
   },
   components: { Comment },
@@ -41,12 +42,15 @@ export default {
   },
   created () {
     const id = this.$route.params.id
-    this.data = getNews(id)
+    getNews(id).then((res) => {
+      this.data = res
+      this.img_src = require('@/assets' + res.img_src)
 
-    if (this.data.link) {
-      this.islink = !this.islink
-      this.infoLink = this.data.link
-    }
+      if (res.link) {
+        this.islink = !this.islink
+        this.infoLink = res.link
+      }
+    })
   }
 }
 </script>

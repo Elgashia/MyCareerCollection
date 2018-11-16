@@ -30,10 +30,9 @@ export default {
     }
   },
   created () {
-    this.newsList = getNews()
-    for (let i = 0; i < this.newsList.length; i++) {
-      this.$localStorage.set('news-' + (i + 1), JSON.stringify(this.newsList[i]))
-    }
+    getNews().then((res) => {
+      this.newsList = res
+    })
   }
 }
 </script>

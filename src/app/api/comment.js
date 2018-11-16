@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import localforage from 'localforage'
 
 const comment = [
   {
@@ -31,16 +31,21 @@ const comment = [
   }
 ]
 
-export const getComment = (id) => {
-  var result = []
-  for (let key in localStorage) {
-    if (localStorage.key(key).includes('cmt')) {
-      console.log(Vue.localStorage.get(localStorage.key(key)))
-      if (parseInt(Vue.localStorage.get(localStorage.key(key)).postId) === parseInt(id)) {
-        result.push(comment[key])
-      }
-    }
+export const getComment = async (id) => {
+  let tmp = []
+  const result = []
+
+  for (let i = 0; i < comment.length; i++) {
+    await localforage.setItem('cmt-' + (i + 1), JSON.stringify(comment[i]))
   }
+
+  tmp = await localforage.startsWith('cmt-')
+  Object.keys(tmp).forEach((key) => {
+    var data = JSON.parse(tmp[key])
+    if (data.postId === parseInt(id)) {
+      result.push(data)
+    }
+  })
 
   if (result.length !== 0) {
     return result
@@ -49,10 +54,15 @@ export const getComment = (id) => {
   }
 }
 
-export const addComment = (data) => {
-  if (data.name && data.comment) {
-    Vue.localStorage.set('cmt-' + comment.length, JSON.stringify(data))
-    comment.push({ data })
+export const addComment = async (data) => {
+  if (data.username && data.comment) {
+    let cmtLen = 0
+    cmtLen = await localforage.startsWith('cmt-')
+    cmtLen = Object.keys(cmtLen).length
+    data['cmtId'] = cmtLen + 1
+
+    localforage.setItem('cmt-' + (cmtLen + 1), JSON.stringify(data))
+    return data
   }
   return false
 }

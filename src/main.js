@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import VueLocalStorage from 'vue-localstorage'
+
+import localforage from 'localforage'
 
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -11,13 +12,11 @@ import store from './vuex'
 
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
-Vue.use(VueLocalStorage)
 
+require('localforage-startswith')
 /* test local db creation */
-Vue.use(VueLocalStorage, {
-  name: 'test',
-  version: 1.0,
-  bind: true
+localforage.config({
+  name: 'testServer'
 })
 
 new Vue({
