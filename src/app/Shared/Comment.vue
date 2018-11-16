@@ -34,7 +34,7 @@ export default {
   data () {
     return {
       comment: {
-        postId: this.$route.params.id,
+        postId: parseInt(this.$route.params.id),
         name: '',
         comment: ''
       },
@@ -45,6 +45,7 @@ export default {
     async addcomment (comment) {
       const res = await addComment(comment)
       this.commentInfo = [ ...this.commentInfo, res ]
+      return this.commentInfo
     }
   },
   created () {
