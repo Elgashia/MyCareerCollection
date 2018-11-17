@@ -28,7 +28,7 @@
       <b-form-input v-model="dumpcomment[idx]" type="text"
                     placeholder="Enter Comment" v-if="data.state"></b-form-input>
 
-      <b-button v-if="!data.state" @click="tryEdit(idx)" text-variant="gray" size="sm" class="mt-1 mr-1">edit</b-button>
+      <b-button v-if="!data.state && !data.no" @click="tryEdit(idx)" text-variant="gray" size="sm" class="mt-1 mr-1">edit</b-button>
       <b-button style="display:none;" v-if="!data.state" variant="info" size="sm" class="mt-1">delete</b-button>
       <b-button v-if="data.state" @click="editComment(idx, dumpcomment[idx])" text-variant="gray" size="sm" class="mt-1 mr-1">Confirm</b-button>
       <b-button v-if="data.state" @click="tryEdit(idx)" text-variant="gray" size="sm" class="mt-1">cansel</b-button>

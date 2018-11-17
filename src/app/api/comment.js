@@ -49,7 +49,7 @@ export const getComment = async (id) => {
   if (result.length !== 0) {
     return result
   } else {
-    return [{ comment: 'Comment is not a exist.' }]
+    return [{ comment: 'Comment is not a exist.', no: true }]
   }
 }
 
