@@ -1,7 +1,9 @@
-# vuejs_starter
+# MyCareer Site
 
 ``` markdown
 vue-cli을 이용한 Vuejs 관련 프로젝트 스타터입니다.
+
+page link: http://erwinousy.iptime.org (항상 열려있는것이 아닌 점 참고바랍니다..)
 ```
 
 **코드 스타일(필수)**
